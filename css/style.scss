@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+//-------------------Theme Dark-------------------------
+// Backgrounds
+$t1MainBackground: hsl(222, 26%, 31%);
+$t1ToggleBackground: hsl(223, 31%, 20%);
+$t1ScreenBackground: hsl(224, 36%, 15%);
+//Keys
+$t1KeyBackground: hsl(225, 21%, 49%);
+$t1KeyShadow: hsl(224, 28%, 35%);
+$t1BackgroundToggle: hsl(6, 63%, 50%);
+$t1BackgroundKeyN: hsl(30, 25%, 89%);
+$t1ShadowKeyN: hsl(28, 16%, 65%);
+$t1keyShadowsIqual: hsl(6, 70%, 34%);
+//Text
+$t1BodyFontColor: white;
+$t1NumbersColor: hsl(221, 14%, 31%);
+$fontSpartan: 'League Spartan', sans-serif;
+//-----------------Theme Light-----------------------------
+//Backgrounds
+$t2MainBackground: hsl(0, 0%, 90%);
+$t2ToggleBackground: hsl(0, 5%, 81%);
+$t2ScreenBackground: hsl(0, 0%, 93%);
+//Keys
+$t2KeyBackground: hsl(185, 42%, 37%);
+$t2KeyShadow: hsl(185, 58%, 25%);
+$t2BackgroundToggle: hsl(25, 98%, 40%);
+$t2KeyShadowOrange: hsl(25, 99%, 27%);
+$t2KeyBackground2: hsl(45, 7%, 89%);
+$t2KeyShadow2: hsl(35, 11%, 61%);
+//Text
+$t2Text1: hsl(60, 10%, 19%);
+$t2Text2: hsl(0, 0%, 100%);
+//-----------------Theme Violet-----------------------------
+//Backgrounds
+$t3MainBackground: hsl(268, 75%, 9%);
+$t3ToggleKeypadBg: hsl(268, 71%, 12%);
+//Keys
+$t3KeyBackground: hsl(281, 89%, 26%);
+$t3KeyShadow: hsl(285, 91%, 52%);
+$t3KeyBackground2: hsl(176, 100%, 44%);
+$t3KeyShadow2: hsl(177, 92%, 70%);
+$t3KeyBackground3: hsl(268, 47%, 21%);
+$t3KeyShadow3: hsl(290, 70%, 36%);
+//Text
+$t3Text: hsl(52, 100%, 62%);
+$t3Text2: hsl(198, 20%, 13%);
+$t3Text3: hsl(0, 0%, 100%);
+//--------------Styles CSS-------------------------
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dark,
+.light,
+.violet {
+    font-family: $fontSpartan;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 22rem;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 22rem;
+        padding: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    label {
+        font-weight: 700;
+        font-size: 0.8rem;
+    }
+
+    .screen {
+        width: 21rem;
+        height: 7rem;
+        border-radius: 1rem;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        p {
+            font-weight: 700;
+            font-size: 2.5rem;
+            padding-right: 1.5rem;
+            height: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+        }
+    }
+
+    .keys {
+        width: 21rem;
+        height: 30rem;
+        margin-top: 1.5rem;
+        border-radius: 1rem;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .operation-numbers,
+        .key-del,
+        .key-iquals,
+        .key-reset {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .operation-numbers {
+            font-size: 2.5rem;
+        }
+
+        .operation-numbers,
+        .key-del {
+            width: 4rem;
+            height: 4.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+        }
+
+        .key-del,
+        .key-reset {
+            font-size: 1.5rem;
+        }
+
+        .key-reset,
+        .key-iquals {
+            width: 9rem;
+            height: 4.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .key-iquals {
+            font-size: 1.5rem;
+        }
+
+        .key-del,
+        .key-iquals,
+        .key-reset,
+        .operation-numbers {
+            cursor: pointer;
+        }
+    }
+
+    .label-theme {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        gap: 2rem;
+        text-transform: uppercase;
+
+        p {
+            padding-bottom: 0.2rem;
+            letter-spacing: 0.1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+    }
+
+    .theme {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        gap: 0.3rem;
+    }
+
+    .theme-numbers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 3.5rem;
+    }
+
+    .toggle-theme {
+        padding: 0.3rem;
+        border-radius: 1rem;
+    }
+
+    input[type=radio],
+    input[type=radio]:checked {
+        appearance: none;
+        width: 1.2rem;
+        height: 1.2rem;
+        vertical-align: top;
+        border-radius: 50%;
+    }
+}
+
+//------------Theme Dark---------------------------------
+.dark {
+    background-color: $t1MainBackground;
+    color: $t1BodyFontColor;
+
+    .screen {
+        background-color: $t1ScreenBackground;
+    }
+
+    .keys {
+        background-color: $t1ScreenBackground;
+        color: $t1NumbersColor;
+    }
+
+    .operation-numbers {
+        background-color: $t1BackgroundKeyN;
+        box-shadow: 0 0.5rem 0 $t1ShadowKeyN;
+    }
+
+    .key-del,
+    .key-reset {
+        background-color: $t1KeyBackground;
+        box-shadow: 0 0.5rem 0 $t1KeyShadow;
+        color: $t2Text2;
+    }
+
+    .key-iquals {
+        background-color: $t1BackgroundToggle;
+        color: $t1BodyFontColor;
+        box-shadow: 0 0.5rem 0 $t1keyShadowsIqual;
+    }
+
+    .toggle-theme {
+        background-color: $t1ToggleBackground;
+    }
+
+    input[type=radio],
+    input[type=radio]:checked {
+        background: $t1BackgroundToggle;
+    }
+
+    input[type=radio] {
+        background: $t1ToggleBackground;
+    }
+
+    input[type=radio]:checked {
+        background: $t1BackgroundToggle;
+    }
+}
+
+//----------- Theme Light-----------------------------
+.light {
+    background-color: $t2MainBackground;
+    color: $t2Text1;
+
+    .screen {
+        background-color: $t2ScreenBackground;
+    }
+
+    .keys {
+        background-color: $t2ToggleBackground;
+    }
+
+    .operation-numbers {
+        background-color: $t2KeyBackground2;
+        box-shadow: 0 0.5rem 0 $t2KeyShadow2;
+    }
+
+    .key-del,
+    .key-reset {
+        background-color: $t2KeyBackground;
+        box-shadow: 0 0.5rem 0 $t2KeyShadow;
+    }
+
+    .key-del,
+    .key-reset {
+        color: $t2Text2;
+    }
+
+    .key-iquals {
+        background-color: $t2BackgroundToggle;
+        box-shadow: 0 0.5rem 0 $t2KeyShadowOrange;
+        color: $t1BodyFontColor;
+    }
+
+    .toggle-theme {
+        background-color: $t2ToggleBackground;
+    }
+
+    input[type=radio],
+    input[type=radio]:checked {
+        background: $t2ToggleBackground;
+    }
+
+    input[type=radio] {
+        background: $t2ToggleBackground;
+    }
+
+    input[type=radio]:checked {
+        background: $t2BackgroundToggle;
+    }
+}
+
+//----------- Theme Violet-----------------------------
+
+.violet {
+    background-color: $t3MainBackground;
+    color: $t3Text;
+
+    .screen {
+        background-color: $t3ToggleKeypadBg;
+    }
+
+    .keys {
+        background-color: $t3ToggleKeypadBg;
+    }
+
+    .operation-numbers {
+        background-color: $t3KeyBackground3;
+        box-shadow: 0 0.5rem 0 $t3KeyShadow3;
+    }
+
+    .key-del,
+    .key-reset {
+        background-color: $t3KeyBackground;
+        box-shadow: 0 0.5rem 0 $t3KeyShadow;
+    }
+
+    .key-del,
+    .key-reset {
+        color: $t3Text3;
+    }
+
+    .key-iquals {
+        background-color: $t3KeyBackground2;
+        box-shadow: 0 0.5rem 0 $t3KeyShadow2;
+        color: $t3Text2;
+    }
+
+    .toggle-theme {
+        background-color: $t3ToggleKeypadBg;
+    }
+
+    input[type=radio],
+    input[type=radio]:checked {
+        background: $t3ToggleKeypadBg;
+    }
+
+    input[type=radio] {
+        background: $t3ToggleKeypadBg;
+    }
+
+    input[type=radio]:checked {
+        background: $t3KeyBackground2;
+    }
+}
+
+
+@media (min-width: 1440px) {
+
+    .dark,
+    .light,
+    .violet {
+        main {
+            width: 44rem;
+        }
+
+        header {
+            width: 40rem;
+        }
+
+        .screen {
+            width: 40rem;
+            height: 10rem;
+
+            p {
+                font-size: 3.5rem;
+            }
+        }
+
+        .keys {
+            width: 40rem;
+            height: 35rem;
+
+            .operation-numbers,
+            .key-del {
+                margin: 0.3rem;
+                width: 8rem;
+                height: 5rem;
+            }
+
+            .key-reset,
+            .key-iquals {
+                width: 17.8rem;
+                height: 4.5rem;
+            }
+        }
+    }
+
+
+}
